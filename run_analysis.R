@@ -50,7 +50,7 @@ levels(merged_data$activity)[1:6] <- c("WALKING", "WALKING_UPSTAIRS",
                                        "WALKING_DOWNSTAIRS", "SITTING",
                                        "STANDING", "LAYING")
 
-##Create second data set
+##Create tidy data set
 tidy_data <- aggregate(. ~subject + activity, merged_data, mean)
 tidy_data <- tidy_data[order(tidy_data$subject, tidy_data$activity), ]
 write.table(tidy_data, "tidy_data.txt", row.names = FALSE, quote = FALSE)
